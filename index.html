@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>TP JAVASCRIPT / Atelier des peintres</title>
+</head>
+<body>
+    <div class="container">
+        <header class="head">
+            <div class="head__logo">
+                <img src="Ressources_Graphiques/logo-art-peinture.png" alt="logo" class="logo">
+                <h1 class="head__title">Les Artistes Peintres</h1>
+            </div>
+            <nav class="head__nav">
+                <a href="#" class="nav__link" id="Picasso" onclick="linkPeintre(this)">Picasso</a>
+                <a href="#" class="nav__link nav__link__active" id="Caillebotte" onclick="linkPeintre(this)">Caillebotte</a>
+                <a href="#" class="nav__link" id="Vermeer" onclick="linkPeintre(this)">Vermeer</a>
+                <a href="#" class="nav__link" id="Kandinski" onclick="linkPeintre(this)">Kandinski</a>
+                <a href="#" class="nav__link" id="Monet" onclick="linkPeintre(this)">Monet</a>
+                <a href="#" class="nav__link link__vangogh" id="VanGogh" onclick="linkPeintre(this)">VanGogh</a>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="main__banniere">
+                <img src="Ressources_Graphiques/img_baniere.png" alt="" class="main__banniere__pic">
+                <div class="main__banniere__text">
+                    <h2 class="banniere__title">Ce que nous faisons</h2>
+                    <p class="banniere__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia optio dolore unde vel sequi odit facere perspiciatis animi aperiam corrupti, molestias itaque, fuga velit consectetur repellat alias illo vero iste repellendus dolor est quam debitis fugit dolorum? Laudantium, possimus necessitatibus?</p>
+                </div>
+            </section>
+
+            <section class="main__nav">
+                <div class="main__link">
+                    <a href="" class="main__nav__link">Nos Productions</a>
+                    <a href="" class="main__nav__link">Qui Sommes Nous</a>
+                    <a href="" class="main__nav__link">Notre Philosophie</a>
+                    <a href="" class="main__nav__link">Nous Contacter</a>
+                </div>
+
+                <div class="main__galery" id="galery">
+                    <div id="galery__animation">
+                        <h2 class="galery__title">Galerie Caillebotte</h2>
+                        <div class="galery__grille">
+                            <a href="Ressources_Graphiques/Caillebotte/Jour_de_pluie_à_Paris.png" class="galery__elem" target="_blank">
+                                <img src="Ressources_Graphiques/Caillebotte/Jour_de_pluie_à_Paris.png" alt="Jour de pluie à Paris (1877)" class="pic">
+                                <p class="pic__title">Jour de pluie à Paris (1877)</p>
+                            </a>
+    
+                            <a href="Ressources_Graphiques/Caillebotte/Peintres_en_batiment.png" class="galery__elem" target="_blank">
+                                <img src="Ressources_Graphiques/Caillebotte/Peintres_en_batiment.png" alt="Les Peintres en bâtiment (1877)" class="pic">
+                                <p class="pic__title">Peintres en bâtiment (1877)</p>
+                            </a>
+    
+                            <a href="Ressources_Graphiques/Caillebotte/Raboteurs_de_parquet.png" class="galery__elem" target="_blank">
+                                <img src="Ressources_Graphiques/Caillebotte/Raboteurs_de_parquet.png" alt="Les Raboteurs de parquet (1877)" class="pic">
+                                <p class="pic__title">Les raboteurs de parquet (1875)</p>
+                            </a>
+    
+                            <a href="Ressources_Graphiques/Caillebotte/Périssoires_sur_l’Yerres.png" class="galery__elem" target="_blank">
+                                <img src="Ressources_Graphiques/Caillebotte/Périssoires_sur_l’Yerres.png" alt="Périssoires sur l'Yerres (1877)" class="pic">
+                                <p class="pic__title">Périssoires sur l’Yerres (1877)</p>
+                            </a>
+    
+                            <a href="Ressources_Graphiques/Caillebotte/Autoportrait_Caillebotte.png" class="galery__elem" target="_blank">
+                                <img src="Ressources_Graphiques/Caillebotte/Autoportrait_Caillebotte.png" alt="Autoprtrait (1877)" class="pic">
+                                <p class="pic__title">Le canotier au chapeau haute forme (ou 'La partie de bateau') (1878)</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="foot">© Copyright Art Fabric</footer>
+    </div>
+    
+    <script src="script/script.js"></script>
+</body>
+</html>
