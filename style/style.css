@@ -147,7 +147,7 @@ body, html{
 }
 
 .galery__anim{
-    animation: 1s linear forwards galeryAnim;;
+    animation: 1s galeryAnim;;
 }
 
 @keyframes galeryAnim {
@@ -195,6 +195,7 @@ body, html{
         padding: 1rem;
     }
     .nav__link{
+        width: 100%;
         border: none;
     }
     .nav__link__active{
