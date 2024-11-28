@@ -165,13 +165,13 @@ body, html{
         transform: translateY(-150px)
     }
     60% {
-        transform: translateY(40px)
+        transform: translateY(50px)
     }
     75% {
         transform: translateY(-90px)
     }
     85% {
-        transform: translateY(10px)
+        transform: translateY(20px)
     }
     95% {
         transform: translateY(-25px)
@@ -181,6 +181,47 @@ body, html{
     }
 }
 
+/* LIGHTBOX */
+
+.lightbox{
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 20%;
+}
+
+.close{
+    position: absolute;
+    right: 0;
+}
+.carousel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+.close{
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+.chevron{
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+.lightbox__title{
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.726);
+}
+.lightbox__visible{
+    display: initial;
+}
+.blur{
+    filter: blur(5px);
+    pointer-events: none;
+}
 
 /* FOOTER */
 

@@ -104,6 +104,8 @@ const titresTableaux = {
     ]
 }
 
+
+
 const galeryAnimation = document.querySelector("#galery__animation");
     galeryAnimation.classList.add("galery__anim");
     setTimeout(() => {
@@ -130,14 +132,15 @@ const linkPeintre = (peintre) => {
 
     listeTableaux[peintre].forEach((el) => {
         // console.log(el);
-        let image = document.createElement("a");
+        let image = document.createElement("div");
         let tableau = document.createElement("img");
         // console.log(tableau);
         let titre = document.createElement("p");
         galerie.appendChild(image);
         image.setAttribute("class", "galery__elem");
-        image.setAttribute("href", el);
-        image.setAttribute("target", "_blank");
+        // image.setAttribute("href", el);
+        // image.setAttribute("target", "_blank");
+        image.setAttribute("onclick", "lightBox(this)")
         // console.log(image);
         image.appendChild(tableau);
         tableau.setAttribute("src", el);
@@ -153,4 +156,29 @@ const linkPeintre = (peintre) => {
     setTimeout(() => {
         galeryAnimation.classList.remove("galery__anim");
     }, 1100);
+}
+
+const head = document.querySelector(".head");
+const main = document.querySelector(".main");
+const foot = document.querySelector(".foot");
+
+
+const lightBox = (lightboxPic) => {
+    // console.log(lightboxPic)
+    let carouPic = lightboxPic.firstChild;
+    let carouTitle = lightboxPic.lastChild;
+    console.log(carouPic);
+    console.log(carouTitle.innerText);
+    document.querySelector(".lightbox").classList.add("lightbox__visible")
+    document.querySelector("#lightTitle").innerText = carouTitle.innerText;
+    document.querySelector("#largepic").src = carouPic.src;
+    head.classList.add("blur");
+    main.classList.add("blur");
+    foot.classList.add("blur");
+}
+const lightboxClose = () => {
+    document.querySelector(".lightbox").classList.remove("lightbox__visible");
+    head.classList.remove("blur");
+    main.classList.remove("blur");
+    foot.classList.remove("blur");
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css">
     <title>TP JAVASCRIPT / Atelier des peintres</title>
 </head>
@@ -44,35 +45,47 @@
                     <div id="galery__animation">
                         <h2 class="galery__title">Galerie Caillebotte</h2>
                         <div class="galery__grille">
-                            <a href="Ressources_Graphiques/Caillebotte/Jour_de_pluie_à_Paris.png" class="galery__elem" target="_blank">
+                            <div class="galery__elem" onclick="lightBox(this)">
                                 <img src="Ressources_Graphiques/Caillebotte/Jour_de_pluie_à_Paris.png" alt="Jour de pluie à Paris (1877)" class="pic">
                                 <p class="pic__title">Jour de pluie à Paris (1877)</p>
-                            </a>
+                            </div>
     
-                            <a href="Ressources_Graphiques/Caillebotte/Peintres_en_batiment.png" class="galery__elem" target="_blank">
+                            <div class="galery__elem" onclick="lightBox(this)">
                                 <img src="Ressources_Graphiques/Caillebotte/Peintres_en_batiment.png" alt="Les Peintres en bâtiment (1877)" class="pic">
                                 <p class="pic__title">Peintres en bâtiment (1877)</p>
-                            </a>
+                            </div>
     
-                            <a href="Ressources_Graphiques/Caillebotte/Raboteurs_de_parquet.png" class="galery__elem" target="_blank">
+                            <div class="galery__elem" onclick="lightBox(this)">
                                 <img src="Ressources_Graphiques/Caillebotte/Raboteurs_de_parquet.png" alt="Les Raboteurs de parquet (1877)" class="pic">
                                 <p class="pic__title">Les raboteurs de parquet (1875)</p>
-                            </a>
+                            </div>
     
-                            <a href="Ressources_Graphiques/Caillebotte/Périssoires_sur_l’Yerres.png" class="galery__elem" target="_blank">
-                                <img src="Ressources_Graphiques/Caillebotte/Périssoires_sur_l’Yerres.png" alt="Périssoires sur l'Yerres (1877)" class="pic">
+                            <div class="galery__elem" onclick="lightBox(this)">
+                                <img src="Ressources_Graphiques/Caillebotte/Périssoires_sur_l’Yerres.png" class="pic">
                                 <p class="pic__title">Périssoires sur l’Yerres (1877)</p>
-                            </a>
+                            </div>
     
-                            <a href="Ressources_Graphiques/Caillebotte/Autoportrait_Caillebotte.png" class="galery__elem" target="_blank">
+                            <div class="galery__elem" onclick="lightBox(this)">
                                 <img src="Ressources_Graphiques/Caillebotte/Autoportrait_Caillebotte.png" alt="Autoprtrait (1877)" class="pic">
                                 <p class="pic__title">Le canotier au chapeau haute forme (ou 'La partie de bateau') (1878)</p>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+
+        <div class="lightbox">
+            <i class="fa-solid fa-xmark close" id="xmark" onclick="lightboxClose(this)"></i>
+            <div class="carousel">
+                <i class="fa-solid fa-chevron-left chevron" id="chevron__left"></i>
+                <div class="lightbox__pic">
+                    <p class="lightbox__title" id="lightTitle"></p>
+                    <img src="Ressources_Graphiques/Caillebotte/Autoportrait_Caillebotte.png" alt="" class="lightbox__largepic" id="largepic">
+                </div>
+                <i class="fa-solid fa-chevron-right chevron"></i>
+            </div>
+        </div>
 
         <footer class="foot">© Copyright Art Fabric</footer>
     </div>
