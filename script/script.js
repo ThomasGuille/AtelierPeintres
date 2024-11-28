@@ -1,7 +1,6 @@
 let titreGalerie = document.querySelector(".galery__title");
 let galerie = document.querySelector(".galery__grille");
 
-
 const listeTableaux = {
     Picasso: [
         "Ressources_Graphiques/Picasso/Autoportrait_Picasso.png",
@@ -109,7 +108,7 @@ const galeryAnimation = document.querySelector("#galery__animation");
     galeryAnimation.classList.add("galery__anim");
     setTimeout(() => {
         galeryAnimation.classList.remove("galery__anim");
-    }, 1100);
+}, 1100);
 
 
 const linkPeintre = (peintre) => {
