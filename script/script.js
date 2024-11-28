@@ -105,6 +105,12 @@ const titresTableaux = {
     ]
 }
 
+const galeryAnimation = document.querySelector("#galery__animation");
+    galeryAnimation.classList.add("galery__anim");
+    setTimeout(() => {
+        galeryAnimation.classList.remove("galery__anim");
+    }, 1100);
+
 
 const linkPeintre = (peintre) => {
     const painterLink = document.querySelectorAll(".nav__link");
@@ -144,9 +150,9 @@ const linkPeintre = (peintre) => {
         titre.innerText = titresTableaux[peintre][listeTableaux[peintre].indexOf(el)];
     })
 
-    const galeryAnim = document.querySelector("#galery__animation");
-    galeryAnim.classList.add("galery__anim");
+    const galeryAnimation = document.querySelector("#galery__animation");
+    galeryAnimation.classList.add("galery__anim");
     setTimeout(() => {
-        galeryAnim.classList.remove("galery__anim");
+        galeryAnimation.classList.remove("galery__anim");
     }, 1100);
 }
