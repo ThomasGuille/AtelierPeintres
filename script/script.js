@@ -67,7 +67,7 @@ const titresTableaux = {
         "Peintres en bâtiment (1877)",
         "Les raboteurs de parquet (1875)",
         "Périssoires sur l’Yerres (1877)",
-        "Le canotier au chapeau haute forme (ou 'La partie de bateau') (1878)"
+        "Le canotier au chapeau haut de forme (ou 'La partie de bateau') (1878)"
     ],
 
     Vermeer: [
@@ -145,6 +145,7 @@ const linkPeintre = (peintre) => {
         image.appendChild(tableau);
         tableau.setAttribute("src", el);
         tableau.setAttribute("class", "pic");
+        tableau.setAttribute("alt", titresTableaux[peintre][listeTableaux[peintre].indexOf(el)])
         image.appendChild(titre);
         titre.setAttribute("class", "pic__title");
 
@@ -158,27 +159,39 @@ const linkPeintre = (peintre) => {
     }, 1100);
 }
 
-const head = document.querySelector(".head");
-const main = document.querySelector(".main");
-const foot = document.querySelector(".foot");
+// LIGHTBOX
 
+const container = document.querySelector(".container");
+let lightTitle = document.querySelector("#lightTitle");
+let largePic = document.querySelector("#largepic");
 
 const lightBox = (lightboxPic) => {
     // console.log(lightboxPic)
     let carouPic = lightboxPic.firstChild;
     let carouTitle = lightboxPic.lastChild;
-    console.log(carouPic);
-    console.log(carouTitle.innerText);
-    document.querySelector(".lightbox").classList.add("lightbox__visible")
-    document.querySelector("#lightTitle").innerText = carouTitle.innerText;
-    document.querySelector("#largepic").src = carouPic.src;
-    head.classList.add("blur");
-    main.classList.add("blur");
-    foot.classList.add("blur");
+    // console.log(carouPic);
+    // console.log(carouTitle.innerText);
+    document.querySelector(".lightbox").classList.add("lightbox__visible");
+    lightTitle.innerText = carouTitle.innerText;
+    largePic.src = carouPic.src;
+    container.classList.add("blur");
+
+    let next = document.querySelector("#chevron__right");
+    next.addEventListener("click", function() {
+        lightTitle.innerText = lightboxPic.nextElementSibling.lastChild.innerText;
+        largePic.src = lightboxPic.nextElementSibling.firstChild.src;
+        lightboxPic = lightboxPic.nextElementSibling;
+    })
+
+    let previous = document.querySelector("#chevron__left");
+    previous.addEventListener("click", function() {
+        lightTitle.innerText = lightboxPic.previousElementSibling.lastChild.innerText;
+        largePic.src = lightboxPic.previousElementSibling.firstChild.src;
+        lightboxPic = lightboxPic.previousElementSibling;
+    })
 }
+
 const lightboxClose = () => {
     document.querySelector(".lightbox").classList.remove("lightbox__visible");
-    head.classList.remove("blur");
-    main.classList.remove("blur");
-    foot.classList.remove("blur");
+    container.classList.remove("blur");
 }
