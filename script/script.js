@@ -71,7 +71,7 @@ const titresTableaux = {
     ],
 
     Vermeer: [
-        "La jeune fille a la perle (1665)",
+        "La jeune fille à la perle (1665)",
         "La Laitière (1658)",
         "La Liseuse à la fenêtre (1659)"
     ],
@@ -109,7 +109,6 @@ const galeryAnimation = document.querySelector("#galery__animation");
     setTimeout(() => {
         galeryAnimation.classList.remove("galery__anim");
 }, 1100);
-
 
 const linkPeintre = (peintre) => {
     const painterLink = document.querySelectorAll(".nav__link");
