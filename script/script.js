@@ -237,8 +237,10 @@ const lightBox = (lightboxPic) => {
     })
 
     const close = document.querySelector("#xmark");
-    close.addEventListener("click", function(){
+    close.addEventListener("click", function() {
         document.querySelector(".lightbox").classList.remove("lightbox__visible");
         container.classList.remove("blur");
+        index = undefined;
+        console.log(index);
     })
 }
