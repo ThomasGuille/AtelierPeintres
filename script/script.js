@@ -166,8 +166,9 @@ const linkPeintre = (peintre) => {
         galerie.removeChild(elem)
     })
 
+    
     titreGalerie.innerText = "Galerie " + peintre;
-
+    
     listeTableaux[peintre].forEach((el) => {
         // console.log(el);
         let image = document.createElement("div");
@@ -186,7 +187,7 @@ const linkPeintre = (peintre) => {
         tableau.setAttribute("alt", titresTableaux[peintre][listeTableaux[peintre].indexOf(el)])
         image.appendChild(titre);
         titre.setAttribute("class", "pic__title");
-
+        
         titre.innerText = titresTableaux[peintre][listeTableaux[peintre].indexOf(el)];
     })
 
@@ -200,25 +201,23 @@ const linkPeintre = (peintre) => {
 // LIGHTBOX
 
 const container = document.querySelector(".container");
-let lightboxTitle = document.querySelector("#lightTitle");
-let largePic = document.querySelector("#largepic");
+const lightboxTitle = document.querySelector("#lightTitle");
+const largePic = document.querySelector("#largepic");
 
 const lightBox = (lightboxPic) => {
     
     document.querySelector(".lightbox").classList.add("lightbox__visible");
     container.classList.add("blur");
-
     let attrb = lightboxPic.getAttribute("data-peintre");
     let index = lightboxPic.getAttribute("data-indx");
-    // console.log(attrb);
-    // console.log(index);
+    
     largePic.src = listeTableaux[attrb][index];
     lightboxTitle.innerText = titresTableaux[attrb][index];
 
-    let next = document.querySelector("#chevron__right");
+    const next = document.querySelector("#chevron__right");
     next.addEventListener("click", function() {
         index++;
-        if(index > listeTableaux[attrb].length - 1){
+        if(index == listeTableaux[attrb].length){
             index = 0;
         }
         largePic.src = listeTableaux[attrb][index];
@@ -226,20 +225,20 @@ const lightBox = (lightboxPic) => {
         console.log(index);
     })
     
-    let previous = document.querySelector("#chevron__left");
+    const previous = document.querySelector("#chevron__left");
     previous.addEventListener("click", function() {
         index--;
         if(index < 0){
-            index = listeTableaux[attrb].length - 1
+            index = listeTableaux[attrb].length - 1;
         }
         largePic.src = listeTableaux[attrb][index];
         lightboxTitle.innerText = titresTableaux[attrb][index];
         console.log(index);
     })
-}
 
-
-const lightboxClose = () => {
-    document.querySelector(".lightbox").classList.remove("lightbox__visible");
-    container.classList.remove("blur");
+    const close = document.querySelector("#xmark");
+    close.addEventListener("click", function(){
+        document.querySelector(".lightbox").classList.remove("lightbox__visible");
+        container.classList.remove("blur");
+    })
 }
