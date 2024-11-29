@@ -105,12 +105,50 @@ const titresTableaux = {
 }
 
 
+// CHARGEMENT PAGE
+
+const painterLink = document.querySelectorAll(".nav__link");
+Array.from(painterLink).forEach((elem) => {
+    elem.classList.remove("nav__link__active");
+})
+Picasso.classList.add("nav__link__active");
+
+Picasso = Picasso.id;
+// console.log(Picasso);
+
+titreGalerie.innerText = "Galerie " + Picasso;
+
+listeTableaux[Picasso].forEach((el) => {
+    // console.log(el);
+    let image = document.createElement("div");
+    let tableau = document.createElement("img");
+    // console.log(tableau);
+    let titre = document.createElement("p");
+    galerie.appendChild(image);
+    image.setAttribute("class", "galery__elem");
+    image.setAttribute("onclick", "lightBox(this)");
+    image.setAttribute("data-peintre", Picasso);
+    image.setAttribute("data-indx", listeTableaux[Picasso].indexOf(el));
+    // console.log(image);
+    image.appendChild(tableau);
+    tableau.setAttribute("src", el);
+    tableau.setAttribute("class", "pic");
+    tableau.setAttribute("alt", titresTableaux[Picasso][listeTableaux[Picasso].indexOf(el)])
+    image.appendChild(titre);
+    titre.setAttribute("class", "pic__title");
+
+    titre.innerText = titresTableaux[Picasso][listeTableaux[Picasso].indexOf(el)];
+})
 
 const galeryAnimation = document.querySelector("#galery__animation");
     galeryAnimation.classList.add("galery__anim");
     setTimeout(() => {
         galeryAnimation.classList.remove("galery__anim");
 }, 1100);
+
+
+
+// ONCLICK
 
 const linkPeintre = (peintre) => {
     const painterLink = document.querySelectorAll(".nav__link");
@@ -138,9 +176,9 @@ const linkPeintre = (peintre) => {
         let titre = document.createElement("p");
         galerie.appendChild(image);
         image.setAttribute("class", "galery__elem");
-        // image.setAttribute("href", el);
-        // image.setAttribute("target", "_blank");
-        image.setAttribute("onclick", "lightBox(this)")
+        image.setAttribute("onclick", "lightBox(this)");
+        image.setAttribute("data-peintre", peintre);
+        image.setAttribute("data-indx", listeTableaux[peintre].indexOf(el));
         // console.log(image);
         image.appendChild(tableau);
         tableau.setAttribute("src", el);
@@ -162,34 +200,44 @@ const linkPeintre = (peintre) => {
 // LIGHTBOX
 
 const container = document.querySelector(".container");
-let lightTitle = document.querySelector("#lightTitle");
+let lightboxTitle = document.querySelector("#lightTitle");
 let largePic = document.querySelector("#largepic");
 
 const lightBox = (lightboxPic) => {
-    // console.log(lightboxPic)
-    let carouPic = lightboxPic.firstChild;
-    let carouTitle = lightboxPic.lastChild;
-    // console.log(carouPic);
-    // console.log(carouTitle.innerText);
+    
     document.querySelector(".lightbox").classList.add("lightbox__visible");
-    lightTitle.innerText = carouTitle.innerText;
-    largePic.src = carouPic.src;
     container.classList.add("blur");
+
+    let attrb = lightboxPic.getAttribute("data-peintre");
+    let index = lightboxPic.getAttribute("data-indx");
+    // console.log(attrb);
+    // console.log(index);
+    largePic.src = listeTableaux[attrb][index];
+    lightboxTitle.innerText = titresTableaux[attrb][index];
 
     let next = document.querySelector("#chevron__right");
     next.addEventListener("click", function() {
-        lightTitle.innerText = lightboxPic.nextElementSibling.lastChild.innerText;
-        largePic.src = lightboxPic.nextElementSibling.firstChild.src;
-        lightboxPic = lightboxPic.nextElementSibling;
+        index++;
+        if(index > listeTableaux[attrb].length - 1){
+            index = 0;
+        }
+        largePic.src = listeTableaux[attrb][index];
+        lightboxTitle.innerText = titresTableaux[attrb][index];
+        console.log(index);
     })
-
+    
     let previous = document.querySelector("#chevron__left");
     previous.addEventListener("click", function() {
-        lightTitle.innerText = lightboxPic.previousElementSibling.lastChild.innerText;
-        largePic.src = lightboxPic.previousElementSibling.firstChild.src;
-        lightboxPic = lightboxPic.previousElementSibling;
+        index--;
+        if(index < 0){
+            index = listeTableaux[attrb].length - 1
+        }
+        largePic.src = listeTableaux[attrb][index];
+        lightboxTitle.innerText = titresTableaux[attrb][index];
+        console.log(index);
     })
 }
+
 
 const lightboxClose = () => {
     document.querySelector(".lightbox").classList.remove("lightbox__visible");
