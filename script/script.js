@@ -230,7 +230,7 @@ const lightBox = (lightboxPic) => {
         largePic.src = listeTableaux[attrb][index];
         lightboxTitle.innerText = titresTableaux[attrb][index];
         largePic.classList.remove("lightbox__largepic__zoom");
-        console.log(index);
+        // console.log(index);
     })
     
     const previous = document.querySelector("#chevron__left");
@@ -242,7 +242,7 @@ const lightBox = (lightboxPic) => {
         largePic.src = listeTableaux[attrb][index];
         lightboxTitle.innerText = titresTableaux[attrb][index];
         largePic.classList.remove("lightbox__largepic__zoom");
-        console.log(index);
+        // console.log(index);
     })
 
     const lightClose = document.querySelector(".lightbox");

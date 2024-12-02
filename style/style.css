@@ -223,12 +223,12 @@ body, html{
 
 .lightbox__largepic{
     width: 100%;
-    transition: all 0.5s;
 }
 .lightbox__largepic:hover{
     cursor: zoom-in;
 }
 .lightbox__largepic__zoom{
+    transition: all 0.5s;
     transform: scale(1.5);
 }
 .lightbox__largepic__zoom:hover{
