@@ -217,6 +217,9 @@ const lightBox = (lightboxPic) => {
     
     largePic.src = listeTableaux[attrb][index];
     lightboxTitle.innerText = titresTableaux[attrb][index];
+    largePic.onclick = () => {
+        largePic.classList.toggle("lightbox__largepic__zoom");
+    }
     
     const next = document.querySelector("#chevron__right");
     next.addEventListener("click", function() {
