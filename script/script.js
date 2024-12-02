@@ -213,7 +213,7 @@ const lightBox = (lightboxPic) => {
     
     largePic.src = listeTableaux[attrb][index];
     lightboxTitle.innerText = titresTableaux[attrb][index];
-
+    
     const next = document.querySelector("#chevron__right");
     next.addEventListener("click", function() {
         index++;
@@ -236,11 +236,12 @@ const lightBox = (lightboxPic) => {
         console.log(index);
     })
 
-    const close = document.querySelector("#xmark");
-    close.addEventListener("click", function() {
-        document.querySelector(".lightbox").classList.remove("lightbox__visible");
-        container.classList.remove("blur");
-        index = undefined;
-        console.log(index);
-    })
+    const lightClose = document.querySelector(".lightbox");
+    lightClose.onclick = (close) => {
+        if(!close.target.matches("#largepic") && !close.target.matches("#chevron__right") && !close.target.matches("#chevron__left") && !close.target.matches("#lightTitle")){
+            document.querySelector(".lightbox").classList.remove("lightbox__visible");
+            container.classList.remove("blur");
+            index = undefined;
+        }
+    }
 }

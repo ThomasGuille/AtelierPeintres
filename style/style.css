@@ -187,25 +187,26 @@ body, html{
     display: none;
     position: fixed;
     z-index: 5;
-    top: 20%;
-    left: 30%;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .close{
     position: absolute;
-    right: 0;
-}
-.carousel{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5rem;
-}
-.close{
+    top: 1rem;
+    right: 1rem;
     font-size: 2rem;
     color: white;
     cursor: pointer;
 }
+.carousel{
+    margin: 5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .chevron{
     font-size: 3rem;
     color: white;
@@ -215,8 +216,7 @@ body, html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    width: 500px;
+    gap: 2rem;
     height: 500px;
 }
 .lightbox__title{
@@ -224,6 +224,7 @@ body, html{
     color: white;
     background: rgba(0, 0, 0, 0.726);
     padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 .lightbox__visible{
     display: initial;
