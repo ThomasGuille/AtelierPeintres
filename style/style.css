@@ -58,7 +58,9 @@ body, html{
     color: orangered;
     background: rgb(46, 32, 26);
 }
-
+.menu__burger{
+    display: none;
+}
 
 /* MAIN */
 
@@ -218,6 +220,11 @@ body, html{
     flex-direction: column;
     gap: 2rem;
 }
+
+.lightbox__largepic{
+    width: 100%;
+}
+
 .lightbox__title{
     text-align: center;
     color: white;
@@ -253,7 +260,22 @@ body, html{
         height: 200px;
         flex-direction: column;
         align-items: start;
-        padding: 1rem;
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+    .head__nav__show{
+        height: 210px;
+    }
+
+    .burger{
+        margin-top: 1rem;
+    }
+    .menu__burger{
+        display: initial;
+        font-size: 2rem;
+        color: white;
     }
     .nav__link{
         width: 100%;

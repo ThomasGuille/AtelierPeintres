@@ -106,7 +106,6 @@ const titresTableaux = {
 
 
 // CHARGEMENT PAGE
-
 const painterLink = document.querySelectorAll(".nav__link");
 Array.from(painterLink).forEach((elem) => {
     elem.classList.remove("nav__link__active");
@@ -147,9 +146,15 @@ const galeryAnimation = document.querySelector("#galery__animation");
 }, 1100);
 
 
+// BURGER
+const burger = document.querySelector(".burger");
+burger.onclick = () => {
+    document.querySelector(".head__nav").classList.toggle("head__nav__show");
+}
+
+
 
 // ONCLICK
-
 const linkPeintre = (peintre) => {
     const painterLink = document.querySelectorAll(".nav__link");
     Array.from(painterLink).forEach((elem) => {
@@ -199,7 +204,6 @@ const linkPeintre = (peintre) => {
 }
 
 // LIGHTBOX
-
 const container = document.querySelector(".container");
 const lightboxTitle = document.querySelector("#lightTitle");
 const largePic = document.querySelector("#largepic");
