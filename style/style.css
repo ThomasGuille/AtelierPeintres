@@ -201,10 +201,11 @@ body, html{
     cursor: pointer;
 }
 .carousel{
-    margin: 5rem 2rem;
+    margin: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .chevron{
@@ -215,9 +216,7 @@ body, html{
 .lightbox__pic{
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2rem;
-    height: 500px;
 }
 .lightbox__title{
     text-align: center;
