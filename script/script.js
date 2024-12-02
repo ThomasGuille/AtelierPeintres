@@ -229,6 +229,7 @@ const lightBox = (lightboxPic) => {
         }
         largePic.src = listeTableaux[attrb][index];
         lightboxTitle.innerText = titresTableaux[attrb][index];
+        largePic.classList.remove("lightbox__largepic__zoom");
         console.log(index);
     })
     
@@ -240,6 +241,7 @@ const lightBox = (lightboxPic) => {
         }
         largePic.src = listeTableaux[attrb][index];
         lightboxTitle.innerText = titresTableaux[attrb][index];
+        largePic.classList.remove("lightbox__largepic__zoom");
         console.log(index);
     })
 
@@ -247,6 +249,7 @@ const lightBox = (lightboxPic) => {
     lightClose.onclick = (close) => {
         if(!close.target.matches("#largepic") && !close.target.matches("#chevron__right") && !close.target.matches("#chevron__left") && !close.target.matches("#lightTitle")){
             document.querySelector(".lightbox").classList.remove("lightbox__visible");
+            largePic.classList.remove("lightbox__largepic__zoom");
             container.classList.remove("blur");
             index = undefined;
         }
