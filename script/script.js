@@ -189,7 +189,7 @@ const linkPeintre = (peintre) => {
         image.appendChild(tableau);
         tableau.setAttribute("src", el);
         tableau.setAttribute("class", "pic");
-        tableau.setAttribute("alt", titresTableaux[peintre][listeTableaux[peintre].indexOf(el)])
+        tableau.setAttribute("alt", titresTableaux[peintre][listeTableaux[peintre].indexOf(el)]);
         image.appendChild(titre);
         titre.setAttribute("class", "pic__title");
         
